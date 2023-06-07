@@ -4,6 +4,8 @@ import CountryInfo from "../elements/CountryInfo";
 
 const InfoBox = ({ country }) => {
   const { latlng, region, subregion, currencies, capital } = country;
+  const currencyName = Object.keys(currencies)[0];
+  console.log(currencyName);
   return (
     <div className="flex flex-row gap-[5%]">
       <div className="mt-12 w-[40%]">
@@ -16,7 +18,7 @@ const InfoBox = ({ country }) => {
           region={region}
           subRegion={subregion}
         />
-        <CountryCode type={"currency"} code={"IDR"} />
+        <CountryCode type={"currency"} code={currencyName} />
       </div>
     </div>
   );
