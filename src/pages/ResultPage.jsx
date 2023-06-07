@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ResultPage = () => {
   const country = useSelector((state) => state.country.selectedCountry);
-  console.log(country);
+
   return (
     <div className="w-full px-[90px] py-[90px]">
       <Link to={"/"}>

@@ -1,16 +1,20 @@
 import React from "react";
-import CountryCode from "../elements/CountryCode";
+import CountryCallingCode from "../elements/CountryCallingCode";
 import CountryInfo from "../elements/CountryInfo";
+import CountryCurrency from "../elements/CountryCurrency";
 
 const InfoBox = ({ country }) => {
-  const { latlng, region, subregion, currencies, capital } = country;
-  const currencyName = Object.keys(currencies)[0];
-  console.log(currencyName);
+  const { latlng, region, subregion, currencies, capital, idd } = country;
+  const currencyName = Object.keys(currencies)[0].toString();
+  const callingCode = `${idd.root[1]}${
+    idd.suffixes.length === 1 ? idd.suffixes[0] : ""
+  }`;
+
   return (
     <div className="flex flex-row gap-[5%]">
       <div className="mt-12 w-[40%]">
         <CountryInfo latitude={latlng} />
-        <CountryCode type={"calling-code"} code={62} />
+        <CountryCallingCode code={callingCode} />
       </div>
       <div className="mt-12 w-[40%]">
         <CountryInfo
@@ -18,7 +22,7 @@ const InfoBox = ({ country }) => {
           region={region}
           subRegion={subregion}
         />
-        <CountryCode type={"currency"} code={currencyName} />
+        <CountryCurrency code={currencyName} />
       </div>
     </div>
   );
