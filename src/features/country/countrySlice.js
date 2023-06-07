@@ -5,6 +5,7 @@ const initialState = {
   loading: true,
   countries: [],
   error: "",
+  selectedCountry: {},
 };
 
 export const fetchCountries = createAsyncThunk(
@@ -19,6 +20,11 @@ export const fetchCountries = createAsyncThunk(
 const countrySlice = createSlice({
   name: "country",
   initialState,
+  reducers: {
+    getSelectedCountry: (state, action) => {
+      state.selectedCountry = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCountries.pending, (state) => {
       state.loading = true;
@@ -37,3 +43,4 @@ const countrySlice = createSlice({
 });
 
 export default countrySlice.reducer;
+export const { getSelectedCountry } = countrySlice.actions;

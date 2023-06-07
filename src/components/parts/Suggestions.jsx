@@ -12,7 +12,11 @@ const Suggestions = () => {
     >
       {country.loading !== true && country.countries.length !== 0 ? (
         country.countries.map((country, index) => (
-          <ListItem key={`suggestion-${index}`} text={country.name.common} />
+          <ListItem
+            key={`suggestion-${index}`}
+            text={country.name.common}
+            dataCountry={country}
+          />
         ))
       ) : country.loading !== true && country.error.length !== 0 ? (
         <ListItem error />
