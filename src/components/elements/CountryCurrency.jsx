@@ -11,6 +11,7 @@ const CountryCurrency = ({ code }) => {
   useEffect(() => {
     dispatch(fetchCurrency(code));
   }, []);
+
   return (
     <div className="mt-7">
       <h4 className="leading-regular font-[500] mb-3">Currency</h4>

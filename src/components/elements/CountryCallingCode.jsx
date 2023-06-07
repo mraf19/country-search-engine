@@ -12,7 +12,6 @@ const CountryCallingCode = ({ code }) => {
     dispatch(fetchCallingCode(code));
   }, []);
 
-  console.log(total);
   return (
     <div className="mt-7">
       <h4 className="leading-regular font-[500] mb-3 first-letter:uppercase">
