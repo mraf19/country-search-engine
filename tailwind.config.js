@@ -18,6 +18,10 @@ export default {
         large: "57.28px",
         header: "85.92px",
       },
+      boxShadow: {
+        suggestions:
+          "-4px -4px 4px rgba(0, 0, 0, 0.02), 4px 4px 4px rgba(0, 0, 0, 0.02)",
+      },
     },
   },
   plugins: [],
