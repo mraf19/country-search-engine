@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import ListItem from "../elements/ListItem";
+import { Link } from "react-router-dom";
 
 const Suggestions = () => {
   const country = useSelector((state) => state.country);
@@ -12,11 +13,9 @@ const Suggestions = () => {
     >
       {country.loading !== true && country.countries.length !== 0 ? (
         country.countries.map((country, index) => (
-          <ListItem
-            key={`suggestion-${index}`}
-            text={country.name.common}
-            dataCountry={country}
-          />
+          <Link to={"/result"} key={`suggestion-${index}`}>
+            <ListItem text={country.name.common} dataCountry={country} />
+          </Link>
         ))
       ) : country.loading !== true && country.error.length !== 0 ? (
         <ListItem error />
