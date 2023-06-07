@@ -1,8 +1,11 @@
 import React from "react";
 import NamePill from "../components/elements/NamePill";
 import InfoBox from "../components/parts/InfoBox";
+import { useSelector } from "react-redux";
 
 const ResultPage = () => {
+  const country = useSelector((state) => state.country.selectedCountry);
+  console.log(country);
   return (
     <div className="w-full px-[90px] py-[90px]">
       <button className="bg-purple px-4 py-4 leading-regular rounded-[10px]">
@@ -16,20 +19,19 @@ const ResultPage = () => {
       <div className="mt-[50px]">
         <div className="mb-4">
           <h3 className="inline mr-[10px] text-5xl font-bold leading-large align-middle">
-            Indonesia
+            {country.name.common}
           </h3>
           <img
-            src="/src/assets/image 1.svg"
-            alt="nation-flag"
+            src={country.flags.svg}
+            alt={country.flags.alt}
             className="w-[46px] h-[30px] inline"
           />
         </div>
-
-        <NamePill text={"ID"} />
-        <NamePill text={"Republic of Indonesia"} />
-        <NamePill text={"Republik Indonesia"} />
+        {country.altSpellings.map((spelling, index) => (
+          <NamePill text={spelling} key={`name-spelling-${index}`} />
+        ))}
       </div>
-      <InfoBox />
+      <InfoBox country={country} />
     </div>
   );
 };
