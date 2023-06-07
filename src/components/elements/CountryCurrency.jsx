@@ -21,7 +21,7 @@ const CountryCurrency = ({ code }) => {
         <span
           className="text-purple underline text-sm"
           data-tooltip-id="currency-toooltip"
-          place="bottom"
+          data-tooltip-place="bottom"
         >
           {total} country
         </span>{" "}
