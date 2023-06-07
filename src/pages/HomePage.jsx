@@ -1,11 +1,15 @@
 import { useDispatch } from "react-redux";
 import Suggestions from "../components/parts/Suggestions";
 import { fetchCountries } from "../features/country/countrySlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const [display, setDisplay] = useState(true);
+  useEffect(() => {
+    setDisplay(false);
+    return setDisplay(false);
+  }, []);
 
   const onKeyUpAction = (e) => {
     if (e.target.value.length !== 0) {
