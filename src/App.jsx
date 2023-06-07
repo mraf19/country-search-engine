@@ -4,8 +4,8 @@ import ResultPage from "./pages/ResultPage";
 function App() {
   return (
     <>
-      <HomePage />
-      {/* <ResultPage /> */}
+      {/* <HomePage /> */}
+      <ResultPage />
     </>
   );
 }

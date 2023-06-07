@@ -1,4 +1,6 @@
 import React from "react";
+import NamePill from "../components/elements/NamePill";
+import InfoBox from "../components/parts/InfoBox";
 
 const ResultPage = () => {
   return (
@@ -23,61 +25,11 @@ const ResultPage = () => {
           />
         </div>
 
-        <div className="inline mr-[5px] py-[5px] px-4 bg-jadeGreen w-fit text-white font-bold rounded-[50px]">
-          ID
-        </div>
-        <div className="inline mr-[5px] py-[5px] px-4 bg-jadeGreen w-fit text-white font-bold rounded-[50px]">
-          Republic of Indonesia
-        </div>
-        <div className="inline mr-[5px] py-[5px] px-4 bg-jadeGreen w-fit text-white font-bold rounded-[50px]">
-          Republik Indonesia
-        </div>
+        <NamePill text={"ID"} />
+        <NamePill text={"Republic of Indonesia"} />
+        <NamePill text={"Republik Indonesia"} />
       </div>
-      <div className="flex flex-row gap-[5%]">
-        <div className="mt-12 w-[40%]">
-          <div className="px-[25px] py-[25px] shadow-suggestions bg-[url('src/assets/globe.svg')] bg-no-repeat bg-right-top">
-            <h4 className="font-[500] leading-regular mb-3">LatLong</h4>
-            <p className="font-bold text-5xl text-purple">-5.0, 120.0</p>
-          </div>
-          <div className="mt-7">
-            <h4 className="leading-regular font-[500] mb-3">Calling Code</h4>
-            <p className="leading-large text-5xl text-purple font-bold mb-3">
-              62
-            </p>
-            <p className="leading-medium text-sm">
-              <span className="text-purple underline text-sm">1 country</span>{" "}
-              with this calling code
-            </p>
-          </div>
-        </div>
-        <div className="mt-12 w-[40%]">
-          <div className="px-[25px] py-[25px] shadow-suggestions">
-            <p className="font-normal leading-regular mb-2">
-              Capital:{" "}
-              <span className="font-bold leading-regular">Jakarta</span>
-            </p>
-            <p className="font-normal leading-regular mb-2">
-              Region: <span className="font-bold leading-regular">Asia</span>
-            </p>
-            <p className="font-normal leading-regular mb-2">
-              Subregion:{" "}
-              <span className="font-bold leading-regular">
-                South-Eastern Asia
-              </span>
-            </p>
-          </div>
-          <div className="mt-7">
-            <h4 className="leading-regular font-[500] mb-3">Currency</h4>
-            <p className="leading-large text-5xl text-purple font-bold mb-3">
-              IDR
-            </p>
-            <p className="leading-medium text-sm">
-              <span className="text-purple underline text-sm">1 country</span>{" "}
-              with this calling code
-            </p>
-          </div>
-        </div>
-      </div>
+      <InfoBox />
     </div>
   );
 };
