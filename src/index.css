@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-sans;
+    @apply text-lg;
+    @apply text-black;
+    @apply leading-small;
+  }
+}
