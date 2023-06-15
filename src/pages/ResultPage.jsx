@@ -1,4 +1,3 @@
-import React from "react";
 import NamePill from "../components/elements/NamePill";
 import InfoBox from "../components/parts/InfoBox";
 import { useSelector } from "react-redux";

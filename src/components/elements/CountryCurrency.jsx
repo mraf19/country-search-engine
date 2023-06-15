@@ -28,16 +28,18 @@ const CountryCurrency = ({ code }) => {
         </span>{" "}
         with this currency
       </p>
-      <Tooltip id="currency-toooltip">
-        {currency.map((curr, index) => (
-          <li
-            key={`listCurrency-${index}`}
-            className="list-none text-white font-normal text-sm leading-small"
-          >
-            {curr.name}
-          </li>
-        ))}
-      </Tooltip>
+      {currency && (
+        <Tooltip id="currency-toooltip">
+          {currency.map((curr, index) => (
+            <li
+              key={`listCurrency-${index}`}
+              className="list-none text-white font-normal text-sm leading-small"
+            >
+              {curr.name}
+            </li>
+          ))}
+        </Tooltip>
+      )}
     </div>
   );
 };

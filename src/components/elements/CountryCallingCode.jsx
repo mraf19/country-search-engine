@@ -30,16 +30,18 @@ const CountryCallingCode = ({ code }) => {
         </span>{" "}
         with this calling code
       </p>
-      <Tooltip id="calling-code-tooltip">
-        {callingCode.map((code, index) => (
-          <li
-            key={`listCode-${index}`}
-            className="list-none text-white font-normal text-sm leading-small"
-          >
-            {code.name}
-          </li>
-        ))}
-      </Tooltip>
+      {callingCode && (
+        <Tooltip id="calling-code-tooltip">
+          {callingCode.map((code, index) => (
+            <li
+              key={`listCode-${index}`}
+              className="list-none text-white font-normal text-sm leading-small"
+            >
+              {code.name}
+            </li>
+          ))}
+        </Tooltip>
+      )}
     </div>
   );
 };
